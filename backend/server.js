@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import authRoutes from "./routes/auth.routes.js";
 import connectToMongoDB from "./db/connecttoMongodb.js";
 import messageRouter from "./routes/message.routes.js";
+import userRouter from "./routes/user.routes.js";
 import cookieParser from "cookie-parser";
 
 const app = express();
@@ -20,6 +21,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRouter);
+app.use("/api/users", userRouter);
 
 app.listen(PORT, () => {
   connectToMongoDB();
