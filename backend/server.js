@@ -5,6 +5,7 @@ import connectToMongoDB from "./db/connecttoMongodb.js";
 import messageRouter from "./routes/message.routes.js";
 import userRouter from "./routes/user.routes.js";
 import cookieParser from "cookie-parser";
+import { server } from "./socket/socket.js";
 
 const app = express();
 
