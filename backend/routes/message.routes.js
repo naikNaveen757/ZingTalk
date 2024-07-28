@@ -1,11 +1,10 @@
-import mongoose from "mongoose";
 import express from "express";
 import { getMessages, sendMessage } from "../controllers/message.controller.js";
 import protectRoute from "../middleware/protectRoute.js";
 
-const messageRouter = express.Router();
+const router = express.Router();
 
-messageRouter.get("/:id", protectRoute, getMessages);
-messageRouter.post("/send/:id", protectRoute, sendMessage);
+router.get("/:id", protectRoute, getMessages);
+router.post("/send/:id", protectRoute, sendMessage);
 
-export default messageRouter;
+export default router;
